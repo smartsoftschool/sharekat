@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/edit.css">
+</head>
+<body>
+    <div class="navbar navbar-default">
+        <nav>
+          <ul class="nav nav-pills pull-left">
+            <li role="presentation" class="active"><a href="#">الرئيسية</a></li>
+            <li role="presentation"><a href="#">معلومات</a></li>
+            <li ><a href="#">اتصل بنا</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted pull-right">شركات</h3>
+      </div>
+<div class="container"> 
+    <div class="row">
+        <div></div>
+      <div class="jumbotron">
+        <h1>موقع شركات</h1>
+        <p class="lead">موقع شركات اكبر موقع في الشرق الاوسط للدعايه والاعلان المجاني </p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">سجل الان</a></p>
+      </div>
+    </div>
+      
+      <footer class="footer pull-right">
+        <p>2016 الحقوق محفوظه لدي سمارت سوفت</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+
+
+    <!--java script-->
+    <script src="/bootstrap/js/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
