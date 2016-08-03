@@ -123,9 +123,18 @@ img{
   padding: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
+  background-color:rgba(120,135,152,0.4);
+}
+.nav > li.top-base {
   border-bottom-left-radius:  5px;
   border-bottom-right-radius:  5px;
-  background-color:rgba(120,135,152,0.2);
+}
+.nav > li.buttom-base {
+  border-top-left-radius:  5px;
+  border-top-right-radius:  5px;
+}
+.nav > li:hover{
+  background-color:rgba(120,135,152,0.7);
 }
 .nav > li > a{
   padding: 0px;
@@ -145,14 +154,10 @@ img{
     position: relative;
 }
 .head-img{
-  background-image: url("/img/banner.jpg");
-  background-size: 1400px 250px;
+  background-image: url("/img/egypt-banner-4.jpg");
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-    border-top-width: 0px;
-    border-right-width: 0px;
-    border-left-width: 0px;
-    border-bottom-width: 0px;
-
+  border-width: 0px;
 }
 .nav-btn{
   margin-top: 0px;
