@@ -1,2 +1,0 @@
-# sharekat
-Sharekat book

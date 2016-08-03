@@ -1,4 +1,171 @@
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
 *{
-    margin: 0px;
+    margin-right:0px;
     padding: 0px;
+    font-family: "Droid Arabic Kufi" ,serif;
+    font-size: 0.99em;
+}
+
+html{
+  margin-bottom: 0px;
+}
+img{
+  height: 100%;
+  /*position: relative;*/
+}
+.main{
+  width: 100%;
+}
+
+
+
+
+
+.brand{
+    float: right;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.main{
+  position: static;
+}
+.right{
+  right: 0;
+  margin-right: 0px;
+  padding-right: 0px;
+  float: right;
+}
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.marketing,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #343642;
+  border-top: 1px solid #e5e5e5;
+  position: fixed;
+}
+
+/* Customize main */
+@media (min-width:10px) {
+  .main {
+    max-width:74%;
+  }
+}
+
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #2f889a;
+}
+
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    font-size: 15px;
+    border-bottom: 0;
+    color: black;
+  /*text-shadow: whitesmoke 0.0em 0.0em 0.0em;*/
+  }
+}
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #292a34;
+}
+
+.border{
+  border: 2px solid blue;
+  padding: 10px;
+  background-color: #4c5f7d;
+}
+.le{
+  margin-right: 15px;
+}
+
+/*NAV*/
+
+.nav{
+  margin-top: 0px;
+  padding-top: 0px;
+  
+}
+.nav > li{
+  background-color: lightgreen;
+  background-blend-mode: exclusion;
+  padding: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom-left-radius:  5px;
+  border-bottom-right-radius:  5px;
+  background-color:rgba(120,135,152,0.2);
+}
+.nav > li > a{
+  padding: 0px;
+  margin: 0px;
+  color: white;
+}
+.nav >li > a:hover,
+.nav >li > a:focus{
+  background-color: transparent;
+}
+
+.navbar-default{
+  margin: 0px;
+  margin-bottom: 0px;
+    /*padding-bottom: 40px;*/
+    background-color: whitesmoke;
+    position: relative;
+}
+.head-img{
+  background-image: url("/img/banner.jpg");
+  background-size: 1400px 250px;
+  background-repeat: no-repeat;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+
+}
+.nav-btn{
+  margin-top: 0px;
+  padding-top: 0px;
+}
+.btn{
+  margin: 0px;
+  padding: 0px;
+  backface-visibility: 0.2;
+}
+.red{
+  color: red;
+}
+.rbg{
+  background-color: lightgray;
 }

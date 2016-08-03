@@ -1,0 +1,49 @@
+@html.extend('layouts/main', function(model) { @html.block('body', function(model) {
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <h1>تسجيل حساب جديد</h1>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="form-group ">
+                <div class="col-sm-9">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="الاسم">
+                </div>
+                <div class="col-sm-3">
+                <label class="le" for="exampleInputEmail1"><span class="red">* </span>الاسم</label>
+                </div>
+                
+            </div>
+            <div class="form-group ">
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="البريد الالكتروني">
+                </div>
+                <div class="col-sm-3">
+                    <label class="le" for="exampleInputEmail1"><span class="red">* </span>البريد الالكتروني</label>
+                </div>
+                
+            </div>
+            <div class="form-group">
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="كلمه المرور">
+                </div>
+                <div class="col-sm-3">
+                <label class="le" for="exampleInputEmail1"><span class="red">* </span>كلمه المرور</label>
+                </div>
+                
+            </div>
+        </form>
+
+    </div>
+    <div class="panel-footer">
+        <form class="form-inline">
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">تسجيل</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+})})

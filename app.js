@@ -1,5 +1,5 @@
 var express = require("express");
-var psth = require("path");
+var path = require("path");
 var vash = require("vash");
 
 var app = express();
@@ -8,9 +8,8 @@ app.set('view engine',"vash");
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/' , function (req, res){
-    res.render('layouts/main')
-})
+require(path.join(__dirname + '/routes/home'))(app);
+require(path.join(__dirname + '/routes/signup'))(app);
 
 app.listen(3000 , function (err) {
     if(err) throw err;
