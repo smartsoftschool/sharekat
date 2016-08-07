@@ -204,13 +204,13 @@ font-weight: bold;
   background-color: #f3f3f3;
   width: 15%;
 }
-.a{
+.signup-header{
   background-color: deepskyblue;
   padding: 0px;
   padding-right: 15px;
   color: white;
 }
-.b{
+.signup-row{
   border: 0.5px dashed deepskyblue;
   border-top:none; 
   padding: 5px;
@@ -300,4 +300,6 @@ font-weight: bold;
 .thumb-col{
   background-color: transparent;
 }
+
+
 /**/

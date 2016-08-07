@@ -13,7 +13,7 @@
 <body >
 
   <div class="" dir="rtl">
-    <div class="col-md-12">
+    <div class="col-md-12 f">
       <div class="row">
         <!--Navbar-->
         @html.include('partials/header')
