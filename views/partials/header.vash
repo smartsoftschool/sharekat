@@ -1,62 +1,78 @@
-<div class="navbar navbar-default head-img">
+<div class="navbar navbar-default head-img row">
+  <div class="col-md-12">
 
-  <div class="row">
+    <div class="row">
 
-    <div class="col-md-1 pull-left">
-      <nav>
-        <ul class="nav nav-pills pull-right">
-        </ul>
-      </nav>
-    </div>
-
-    <div class="col-md-5 pull-left">
-      <nav>
-        <ul class="nav nav-pills pull-left">
-          <li class="nav-btn"><a href="/">الرئيسية</a></li>
-          <li class="nav-btn"><a href="#">معلومات</a></li>
-          <li class="nav-btn"><a href="#">اتصل بنا</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="col-md-5">
-      <nav>
-        <ul class="nav nav-pills pull-right">
-          <li class="nav-btn"><a href="/login"> تسجيل الدخول</a></li>
-          <li class="nav-btn"><a href="/signup">اشترك الان</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12 pull-right">
-
-      <div class="col-md-3 pull-right">
+      <div class="col-md-1 pull-left">
         <nav>
-          <h3 class="text-muted brand"><img src="/img/logo.png" alt=""></h3>
+          <ul class="nav nav-pills pull-right">
+          </ul>
+        </nav>
+      </div>
+
+
+      <div class="col-md-5 pull-left">
+        <nav>
+          <ul class="nav nav-pills pull-left">
+            <li class="nav-btn top-base"><a href="/">الرئيسية</a></li>
+            <li class="nav-btn top-base"><a href="#">معلومات</a></li>
+            <li class="nav-btn top-base"><a href="#">اتصل بنا</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="col-md-5">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li class="nav-btn top-base"><a href="/login"> تسجيل الدخول</a></li>
+            <li class="nav-btn top-base"><a href="/signup">اشترك الان</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="col-md-1 pull-right">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+          </ul>
         </nav>
       </div>
 
     </div>
-  </div>
 
-<div class="row">
-    <div class="col-md-3  pull-right">
-      <nav>
-        <ul class="nav nav-pills btn-col">
-          <li class="nav-btn btn-lg"><a href="#">البحث</a></li>
-        </ul>
-      </nav>
+    <div class="row">
+      <div class="col-md-12 pull-right">
+
+        <div class="col-md-3 pull-right">
+          <nav>
+            <h3 class="text-muted brand"><img src="/img/logo.png" alt=""></h3>
+          </nav>
+        </div>
+
+      </div>
     </div>
 
-    <div class="col-md-9">
-      <nav>
-        <ul class="nav nav-pills pull-left">
-          
-        </ul>
-      </nav>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-4 pull-left">
+        <nav>
+          <ul class="nav nav-pills pull-left">
+            <li class="nav-btn buttom-base"><a href="/">الرئيسية</a></li>
+            <li class="nav-btn buttom-base"><a href="#">معلومات</a></li>
+            <li class="nav-btn buttom-base"><a href="#">اتصل بنا</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="col-md-4">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li class="nav-btn buttom-base"><a href="/signup"> تسجيل الدخول</a></li>
+            <li class="nav-btn buttom-base"><a href="/signup">اشترك الان</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="col-md-2"></div>
     </div>
   </div>
-
 </div>
