@@ -6,5 +6,5 @@
       <p class="lead">اكبر موقع في الشرق الاوسط للدعايه والاعلان المجاني</p>
       <p class="lead">اكبر موقع في الشرق الاوسط للدعايه والاعلان المجاني</p>
       <p class="lead">اكبر موقع في الشرق الاوسط للدعايه والاعلان المجاني</p>
-      <p><a class="btn btn-lg btn-success " id="myBtn" href="/login" role="button">سجل الان</a></p>
+      <p><a class="btn  btn-success " id="myBtn" href="/login" role="button">سجل الان</a></p>
     </div>

@@ -22,7 +22,7 @@
     <div class="col-md-5">
       <nav>
         <ul class="nav nav-pills pull-right">
-          <li class="nav-btn"><a href="/signup"> تسجيل الدخول</a></li>
+          <li class="nav-btn"><a href="/login"> تسجيل الدخول</a></li>
           <li class="nav-btn"><a href="/signup">اشترك الان</a></li>
         </ul>
       </nav>
@@ -42,21 +42,18 @@
   </div>
 
 <div class="row">
-    <div class="col-md-5 pull-left">
+    <div class="col-md-3  pull-right">
       <nav>
-        <ul class="nav nav-pills pull-right">
-          <li class="nav-btn"><a href="/">الرئيسية</a></li>
-          <li class="nav-btn"><a href="#">معلومات</a></li>
-          <li class="nav-btn"><a href="#">اتصل بنا</a></li>
+        <ul class="nav nav-pills btn-col">
+          <li class="nav-btn btn-lg"><a href="#">البحث</a></li>
         </ul>
       </nav>
     </div>
 
-    <div class="col-md-5">
+    <div class="col-md-9">
       <nav>
-        <ul class="nav nav-pills pull-right">
-          <li class="nav-btn"><a href="/signup"> تسجيل الدخول</a></li>
-          <li class="nav-btn"><a href="/signup">اشترك الان</a></li>
+        <ul class="nav nav-pills pull-left">
+          
         </ul>
       </nav>
     </div>

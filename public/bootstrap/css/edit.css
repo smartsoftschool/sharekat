@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+@import url(https://fonts.googleapis.com/css?family=Lalezar&subset=arabic,latin);
 *{
     margin-right:0px;
     padding: 0px;
@@ -158,14 +159,145 @@ img{
   margin-top: 0px;
   padding-top: 0px;
 }
-.btn{
-  margin: 0px;
-  padding: 0px;
-  backface-visibility: 0.2;
+.btn-lg{
+ width: 100%;
 }
+.btn-col > li{
+background-color:rgba(30,188,213,0.5);
+}
+.btn-col > li >a{
+text-align: center;
+font-size: 20px;
+font-family: 'Lalezar', cursive;
+color: white;
+font-weight: bold;
+}
+
+/**/
 .red{
   color: red;
 }
 .rbg{
   background-color: lightgray;
 }
+
+
+.reg-table th, .reg-table td, .reg-table {
+    border-top: none !important;
+    border-left: none !important;
+    border-bottom: none !important;
+}
+.reg-table {
+  margin-top: 30px;
+  table-layout: fixed;
+  word-wrap: break-word;
+  padding: 3px;
+  /*border: 2px dashed deepskyblue;*/
+}
+.reg-head{
+  background-color: lightblue;
+}
+.reg-btn{
+  border-radius: 0px;
+}
+.gray{
+  background-color: #f3f3f3;
+  width: 15%;
+}
+.a{
+  background-color: deepskyblue;
+  padding: 0px;
+  padding-right: 15px;
+  color: white;
+}
+.b{
+  border: 0.5px dashed deepskyblue;
+  border-top:none; 
+  padding: 5px;
+  box-sizing: border-box;
+}
+.c{
+  border: 0.5px dashed deepskyblue;
+  border-top: none;
+  padding: 5px;
+}
+
+
+
+
+
+.form {
+  background: rgba(249, 249, 249, 0.9);
+  padding: 40px;
+  max-width: auto;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(51, 122, 183, 0.3);
+}
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(160, 179, 176, 0.25);
+  color: black;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+.tab-group li a:hover {
+  background: #1ebcd5;
+  color: #ffffff;
+}
+.tab-group .active a {
+  background: #1ebcd5;
+  color: #ffffff;
+}
+
+.tab-content > div:last-child {
+  display: none;
+}
+
+.h1 {
+  text-align: center;
+  color: #9c9999;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+
+.h{
+  text-align: center;
+  color: black;
+  font-weight: 100;
+  font-size: 30px;
+  margin: 0 0 40px;
+}
+
+.in-pad{
+  padding: 40px;
+  font-size: 30px;
+}
+.lg{
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+}
+
+.thumb-col{
+  background-color: transparent;
+}
+/**/
