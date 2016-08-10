@@ -3,14 +3,17 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@model.title</title>
-
-  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="" media="screen and (min-width:500px)">
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/EARLY_ACCESS.css">
+  <link rel="stylesheet" href="/bootstrap-rtl/dist/css/bootstrap-rtl.min.css">
   <!--<link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">-->
-  <link rel="stylesheet" href="/bootstrap/css/edit.css">
+  <link rel="stylesheet" href="/css/edit.css">
 </head>
 
-<body >
+<body>
 
   <div class="" dir="rtl">
     <div class="col-md-12 f">
@@ -20,21 +23,23 @@
       </div>
 
       <div class="row">
-<!------------Side ADS----------------->
-        <div class="col-md-2">
+
+        <!------------Side ADS----------------->
+        <div class="col-md-2 no-sm">
           <img src="/img/ads.gif" alt="" height="auto">
         </div>
-<!--------------BODY------------------->
-        <div class="col-md-8">
+        <!--------------BODY------------------->
+
+        <div class="col-xs-12 col-md-8">
           @html.block('body')
         </div>
-<!------------Side ADS----------------->
-        <div class="col-md-2">
+        <!------------Side ADS----------------->
+        <div class="col-md-2 no-sm">
           <img src="/img/ads.gif" alt="" height="auto">
         </div>
 
       </div>
-      
+
       <div class="row">
         @html.include('partials/footer')
       </div>
@@ -58,9 +63,9 @@
 
 
   <!--java script-->
-  <script src="/bootstrap/js/jquery.min.js"></script>
-  <script src="/bootstrap/js/bootstrap.min.js"></script>
-  <script src="/bootstrap/js/edit.js"></script>
+  <script src="/jquery/dist/jquery.min.js"></script>
+  <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/js/edit.js"></script>
 </body>
 
 </html>
