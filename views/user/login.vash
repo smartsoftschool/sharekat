@@ -4,8 +4,8 @@
     <div class="form">
 
         <ul class="tab-group ">
-            <li class="tab active"><a href="#signup">مسجل مسبقا</a></li>
-            <li class="tab"><a href="#login">مشترك جديد</a></li>
+            <li class="tab active tab-font"><a href="#signup">مسجل مسبقا</a></li>
+            <li class="tab tab-font"><a href="#login">مشترك جديد</a></li>
         </ul>
 
         <div class="tab-content">

@@ -1,40 +1,43 @@
 @html.extend('layouts/main', function(model) { @html.block('body', function(model) {
-<div class="row signup-header">
-    <h4>تسجيل حساب جديد</h4>
-</div>
-<div class="row signup-row">
-    <form class="form-horizontal" method="post" >
-        <table>
-            <tbody>
-                <tr>
-                    <td class="gray"> <span class="red">* </span> الاسم </td>
-                    <td><input type="text" class="form-control" id="exampleInputName2" name="name" placeholder="الاسم"></td>
-                </tr>
-                <tr>
-                    <td class="gray"> <span class="red">* </span> البريد الالكتروني </td>
-                    <td><input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="البريد الالكتروني"></td>
-                </tr>
-                <tr>
-                    <td class="gray"> <span class="red">* </span> كلمه المرور </td>
-                    <td> <input type="password" class="form-control" id="exampleInputPassword1" name="pass" placeholder="كلمه المرور"></td>
-                </tr>
-                <tr>
-                    <td class="gray"> <span class="red">* </span>تاكيد كلمه المرور </td>
-                    <td> <input type="password" class="form-control" id="exampleInputPassword1" name="passconfirm" placeholder=" تأكيد كلمه المرور"></td>
-                </tr>
-                   
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>
-                     <button type="submit" class="btn btn-default">متابعه</button>
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
-    </form>
-</div>
 
+<form action="/user/register" method="POST">
+<div class="container-fluid signup-row">
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="dark-grey">اشترك الان</h3>
+
+            <div class="form-group col-lg-12">
+                <label>الاسم</label>
+                <input type="text" class="form-control" id="exampleInputName2" name="name" placeholder="الاسم">
+            </div>
+
+            <div class="form-group col-lg-6">
+                <label>كلمه المرور</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="pass" placeholder="كلمه المرور">
+            </div>
+
+            <div class="form-group col-lg-6">
+                <label>تاكيد كلمه المرور</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="passconfirm" placeholder=" تأكيد كلمه المرور">
+            </div>
+
+            <div class="form-group col-lg-6">
+                <label>البريد الالكتروني</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="البريد الالكتروني">
+            </div>
+
+
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm-6 ">
+            <button type="submit" class="btn btn-primary reg-btn">متابعه</button>
+        </div>
+    </div>
+
+</div>
+</form>
 
 })})
 

@@ -1,7 +1,3 @@
-<footer class="footer">
-          <div class="container">
-            <div class="col-md-12">
-            <p class="text-muted pull-right">الحقوق محفوظه لدي سمارت سوفت 2016</p>
-            </div>
-          </div>
+<footer class="footer">   
+            <h4 class=" pull-right">الحقوق محفوظه لدي سمارت سوفت 2016  </h4>   
 </footer>
