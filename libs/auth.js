@@ -54,16 +54,16 @@ module.exports = function (app) {
             return x.email == model.email;
         });
         if (user && user.pass == model.pass) {
-            if( user.active == null){
+            if( user.verf == true){
                 req.session.user = {
                 email: user.email
             };
             } else {
-                res.render('user/pleaseactivate')
+                res.render('user/pleaseactivate', { userId: user.id })
             }
             
         }else {
-            res.render('user/pleaseactivate')
+            res.render('user/pleaseactivate', { userId: user.id })
         }
         next();
     }

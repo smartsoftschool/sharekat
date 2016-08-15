@@ -13,11 +13,12 @@ module.exports = function (app) {
                 name: model.name,
                 email: model.email,
                 pass: model.pass,
-                active: Date.now()
+                id: Date.now(),
+                verf: false
             }
             app.dbLayer.db.users.push(entity);
             app.dbLayer.save();
-            console.log('sending mail...');
+            console.log('sending mail ...');
             sendActivationMail(req, res, entity);
 
         } else {
@@ -26,11 +27,21 @@ module.exports = function (app) {
 
     });
 
+    app.get('/user/re-verify/:userId', function(req, res) {
+        var id = req.params.userId;
+        var entity = app.dbLayer.db.users.find(function(x) {
+            return  x.id == id;
+        });
+        
+        console.log('resending mail ...');
+        sendActivationMail(req, res, entity);
+    })
+
     function sendActivationMail(req, res, entity) {
         app.mailer.send('user/activationMail', {
                 to: entity.email, // REQUIRED 
                 subject: 'شركات مصر', // REQUIRED.
-                link: 'http://' + app.config.siteAddress + ':' + app.config.sitePort + '/user/activate/' + entity.active
+                link: 'http://' + app.config.siteAddress + ':' + app.config.sitePort + '/user/activate/' + entity.id
             }, function (err, msg) {
                 if (err) {
                     console.log(err);
@@ -58,15 +69,15 @@ module.exports = function (app) {
         res.redirect('/');
     });
 
-    app.get('/user/activate/:active', function(req, res) {
-        var active = req.params.active;
+    app.get('/user/activate/:id', function(req, res) {
+        var id = req.params.id;
 
         var entity = app.dbLayer.db.users.find(function(x) {
-            return  x.active == active;
+            return  x.id == id;
         })
 
         if(entity) {
-            entity.active = null;
+            entity.verf = true;
             app.dbLayer.save();
             
             res.render('user/activationDone');

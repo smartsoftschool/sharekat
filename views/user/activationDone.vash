@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-sx-8">
         <div class="jumbotron">
-            <h3>تهانينا, لقد تم تفعيل حسابك لتجيل الدخول <a href="/user/login">هنا</a></h3>
+            <h3>تهانينا, لقد تم تفعيل حسابك لتسجيل الدخول <a href="/user/login">اضغط هنا</a></h3>
         </div>
     </div>  
 </div>
