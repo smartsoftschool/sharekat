@@ -4,7 +4,7 @@ module.exports = function (app) {
         loginRequired: loginRequired,
         login: login,
         logout: logout,
-        isAdmin: isAdmin
+        isAdmin: isAdmin,
     };
 
 
@@ -53,15 +53,16 @@ module.exports = function (app) {
         var user = app.dbLayer.db.users.find(function (x) {
             return x.email == model.email;
         });
-        if (user && user.pass == model.pass) {
+        if (user && user.pass == model.pass && user.active == null) {
             req.session.user = {
                 email: user.email
             };
-        }
+        }else (res.render('user/pleaseactivate'))
         next();
     }
     function logout(req, res, next) {
         req.session.reset();
         next();
     }
+    
 }

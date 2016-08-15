@@ -1,0 +1,13 @@
+@html.extend('layouts/main', function(model) { @html.block('body', function(model) {
+
+  <div class=" jumbotron">
+      <div class="row">
+          <div class="col-xs-9">
+              <h1>لم يتم التفعيل</h1> 
+              <h3>من فضلك فعل حسابك عبر الرابط المرسل الي بريدك الالكتروني</h3>
+          </div>
+      </div>
+  </div>
+
+})})
+
