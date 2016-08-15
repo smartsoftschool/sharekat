@@ -10,7 +10,7 @@ var dbLayer = require(path.join(__dirname, 'database/db'))
 var app = express();
 dbLayer.load();
 app.dbLayer = dbLayer;
-
+app.config = require(path.join(__dirname, 'config/config'));
 
 app.set('view engine', "vash");
 
@@ -21,6 +21,7 @@ app.use(express.static(__dirname + '/node_modules'));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 require(path.join(__dirname, "/libs/auth"))(app);
+require(path.join(__dirname, "/libs/mailer"))(app);
 
 
 

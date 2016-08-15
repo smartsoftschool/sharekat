@@ -1,0 +1,14 @@
+
+
+@html.extend('layouts/main', function(model) { 
+@html.block('body', function(model) {
+
+<div class="row">
+    <div class="col-sx-8">
+        <div class="jumbotron">
+            <h3>تهانينا, لقد تم تفعيل حسابك لتجيل الدخول <a href="/user/login">هنا</a></h3>
+        </div>
+    </div>  
+</div>
+
+})})

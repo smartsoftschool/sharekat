@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@model.title</title>
+  <link rel="stylesheet" href="" media="screen and (min-width:500px)">
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/EARLY_ACCESS.css">
+  <link rel="stylesheet" href="/bootstrap-rtl/dist/css/bootstrap-rtl.min.css">
+  <!--<link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">-->
+  <link rel="stylesheet" href="/css/edit.css">
+</head>
+
+<body>
+
+  <div class="row" dir="rtl">
+    <div class="col-xs-12">
+          @html.block('body')
+    </div>
+  </div>
+
+
+  <!--java script-->
+  <script src="/jquery/dist/jquery.min.js"></script>
+  <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/js/edit.js"></script>
+</body>
+
+</html>

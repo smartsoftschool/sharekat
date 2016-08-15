@@ -1,55 +1,24 @@
 module.exports = function (app) {
-    var sessions = require('client-sessions');
 
-
-    var mailer = require('express-mailer');
-
-    mailer.extend(app, {
-        from: 'no-reply@example.com',
-        host: 'gator3086.hostgator.com', // hostname
-        secureConnection: true, // use SSL
-        port: 465, // port for secure SMTP
-        transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
-        auth: {
-            user: 'sharekat@smartsoft-eg.com',
-            pass: 'sharekat'
-        }
-    });
-
-
-    app.get('/user/add-adv', app.auth.loginRequired, function (req, res) {
-        res.render('user/add-adv')
-    })
 
     app.get('/user/register', function (req, res) {
         res.render('user/register')
     });
 
     app.post('/user/register', function (req, res) {
-        var user = req.body;
+        var model = req.body;
 
-        if (user.pass === user.passconfirm) {
-            var newuser = {
-                name: user.name,
-                email: user.email,
-                pass: user.pass,
+        if (model.pass === model.passconfirm) {
+            var entity = {
+                name: model.name,
+                email: model.email,
+                pass: model.pass,
                 active: Date.now()
             }
-            app.dbLayer.db.users.push(newuser);
+            app.dbLayer.db.users.push(entity);
             app.dbLayer.save();
-            app.mailer.send('user/activationMail', {
-                to: user.email, // REQUIRED. This can be a comma delimited string just like a normal email to field. 
-                subject: 'شركات مصر', // REQUIRED.
-                active: newuser.active // All additional properties are also passed to the template as local variables.
-            }, function (err) {
-                if (err) {
-                    // handle error
-                    console.log(err);
-                    res.send('There was an error sending the email');
-                    return;
-                }
-                res.render('user/pleaseactivate')
-            });
+            console.log('sending mail...');
+            sendActivationMail(req, res, entity);
 
         } else {
             res.redirect('/user/register')
@@ -57,7 +26,20 @@ module.exports = function (app) {
 
     });
 
-
+    function sendActivationMail(req, res, entity) {
+        app.mailer.send('user/activationMail', {
+                to: entity.email, // REQUIRED 
+                subject: 'شركات مصر', // REQUIRED.
+                link: 'http://' + app.config.siteAddress + ':' + app.config.sitePort + '/user/activate/' + entity.active
+            }, function (err, msg) {
+                if (err) {
+                    console.log(err);
+                    res.send('There was an error sending the email');
+                } else {
+                res.redirect('/user/login');
+                }
+            });
+    }
 
 
 
@@ -76,24 +58,21 @@ module.exports = function (app) {
         res.redirect('/');
     });
 
-    app.get('/user/forget', function (req, res) {
-        res.render('user/forget');
+    app.get('/user/activate/:active', function(req, res) {
+        var active = req.params.active;
+
+        var entity = app.dbLayer.db.users.find(function(x) {
+            return  x.active == active;
+        })
+
+        if(entity) {
+            entity.active = null;
+            app.dbLayer.save();
+            
+            res.render('user/activationDone');
+        } else {
+            res.render('user/activationFailed');
+        }
     })
 
-    app.get('/user/forgetpass', function (req, res, next) {
-        app.mailer.send('passreset/passreset.vash', {
-            to: 'example@example.com', // REQUIRED. This can be a comma delimited string just like a normal email to field. 
-            subject: 'Test Email', // REQUIRED.
-            otherProperty: 'Other Property' // All additional properties are also passed to the template as local variables.
-        }, function (err) {
-            if (err) {
-                // handle error
-                console.log(err);
-                res.send('There was an error sending the email');
-                return;
-            }
-            res.send('Email Sent');
-
-        });
-    });
 };
