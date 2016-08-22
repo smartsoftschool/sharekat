@@ -22,7 +22,7 @@ module.exports = function (app) {
             var user = app.dbLayer.db.users.find(function (x) {
                 return x.email == email;
             });
-            req.user = user;
+            req.user =user;
         }
         next();
     })
@@ -59,11 +59,11 @@ module.exports = function (app) {
                 email: user.email
             };
             } else {
-                res.render('user/pleaseactivate', { userId: user.id })
+                res.render('user/pleaseactivate', { entityId: user.id })
             }
             
         }else {
-            res.render('user/pleaseactivate', { userId: user.id })
+            res.render('user/pleaseactivate', { entityId: user.id })
         }
         next();
     }

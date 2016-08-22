@@ -17,10 +17,13 @@
     "body-parser": "^1.15.2",
     "bootstrap-rtl": "^3.3.4",
     "client-sessions": "^0.7.0",
+    "nodemon": "*",
     "express": "^4.14.0",
     "express-mailer": "^0.3.1",
     "jquery": "^3.1.0",
     "jsonfile": "*",
+    "mongodb": "^2.2.6",
+    "mongoose": "^4.5.9",
     "vash": "^0.12.1"
   }
 }

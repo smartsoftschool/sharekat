@@ -1,5 +1,5 @@
 module.exports = function (app) {
     app.get('/', function (req, res) {
-        res.render('home', { title: 'Home', user: req.user });
+        res.render('home', { user: req.user });
     });
 }

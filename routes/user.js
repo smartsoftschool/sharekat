@@ -27,29 +27,43 @@ module.exports = function (app) {
 
     });
 
-    app.get('/user/re-verify/:userId', function(req, res) {
+    app.get('/user/re-verify/:userId', function (req, res) {
         var id = req.params.userId;
-        var entity = app.dbLayer.db.users.find(function(x) {
-            return  x.id == id;
+        var entity = app.dbLayer.db.users.find(function (x) {
+            return x.id == id;
         });
-        
+
         console.log('resending mail ...');
         sendActivationMail(req, res, entity);
     })
 
     function sendActivationMail(req, res, entity) {
-        app.mailer.send('user/activationMail', {
-                to: entity.email, // REQUIRED 
-                subject: 'شركات مصر', // REQUIRED.
-                link: 'http://' + app.config.siteAddress + ':' + app.config.sitePort + '/user/activate/' + entity.id
-            }, function (err, msg) {
-                if (err) {
-                    console.log(err);
-                    res.send('There was an error sending the email');
-                } else {
+        app.mailer.send('user/mail-views/activationMail', {
+            to: entity.email, // REQUIRED 
+            subject: 'شركات مصر', // REQUIRED.
+            link: 'http://' + app.config.site.address + ':' + app.config.site.port + '/user/activate/' + entity.id
+        }, function (err, msg) {
+            if (err) {
+                console.log(err);
+                res.send('There was an error sending the email');
+            } else {
                 res.redirect('/user/login');
-                }
-            });
+            }
+        });
+    }
+    function sendPassresetMail(req, res, entity) {
+        app.mailer.send('user/mail-views/activationMail', {
+            to: entity.email, // REQUIRED 
+            subject: 'شركات مصر', // REQUIRED.
+            link: 'http://' + app.config.site.address + ':' + app.config.site.port + '/user/changepasswordreq/' + entity.id
+        }, function (err, msg) {
+            if (err) {
+                console.log(err);
+                res.send('There was an error sending the email');
+            } else {
+                res.redirect('/user/login');
+            }
+        });
     }
 
 
@@ -69,20 +83,69 @@ module.exports = function (app) {
         res.redirect('/');
     });
 
-    app.get('/user/activate/:id', function(req, res) {
+    app.get('/user/activate/:id', function (req, res) {
         var id = req.params.id;
 
-        var entity = app.dbLayer.db.users.find(function(x) {
-            return  x.id == id;
+        var entity = app.dbLayer.db.users.find(function (x) {
+            return x.id == id;
         })
 
-        if(entity) {
+        if (entity) {
             entity.verf = true;
             app.dbLayer.save();
-            
-            res.render('user/activationDone');
+
+            res.render('user/mail-views/activationDone');
         } else {
-            res.render('user/activationFailed');
+            res.render('user/mail-views/activationFailed');
+        }
+    })
+
+    app.get('/user/forgetpassword', function (req, res) {
+        res.render('user/forgetpassword', { entity: req.entity })
+    })
+    app.post('/user/forgetpassword', function (req, res) {
+        var email = req.body.email;
+
+        var entity = app.dbLayer.db.users.find(function (x) {
+            return x.email == email;
+        })
+        if (entity) {
+            sendPassresetMail(req, res, entity);
+            res.redirect('/')
+        } else {
+            res.redirect('/user/forgetpassword')
+        }
+
+    })
+
+    app.get('/user/changepasswordreq/:id', function (req, res) {
+        var id = req.params.id;
+
+        var entity = app.dbLayer.db.users.find(function (x) {
+            return x.id == id;
+        })
+        if (entity) { 
+            console.log(entity);
+            res.render('user/changepasswordconfirm' , {user: entity});
+        } else {
+            res.redirect('/')
+        }
+    })
+
+    app.post('/user/changepasswordconfirm', function (req, res) {
+        var model = req.body;
+
+        if (model.pass === model.passconfirm) {
+
+           var entity = app.dbLayer.db.users.find(function (x) {
+                return x.id == model.id;
+            })
+            entity.pass= model.pass;
+             console.log(entity);
+            app.dbLayer.save();
+            res.redirect('/user/login')
+        }else{
+            res.redirect('/user/changepasswordconfirm')
         }
     })
 
