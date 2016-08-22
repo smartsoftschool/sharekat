@@ -59,11 +59,11 @@ module.exports = function (app) {
                 email: user.email
             };
             } else {
-                res.render('user/pleaseactivate', { entityId: user.id })
+                res.render('user/mail-views/pleaseactivate', { entityId: user.id })
             }
             
         }else {
-            res.render('user/pleaseactivate', { entityId: user.id })
+            res.render('user/mail-views/pleaseactivate', { entityId: user.id })
         }
         next();
     }
