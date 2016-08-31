@@ -1,5 +1,12 @@
 module.exports = function (app) {
     var sessions = require('client-sessions');
+    var csrf = require('csurf');
+
+    // app.use(csrf())
+
+    // error handler
+
+
     app.auth = {
         loginRequired: loginRequired,
         login: login,
@@ -18,14 +25,17 @@ module.exports = function (app) {
     //==============middlewares==============
     app.use(function (req, res, next) {
         if (req.session && req.session.user) {
-            var email = req.session.user.email;
-            var user = app.dbLayer.db.users.find(function (x) {
-                return x.email == email;
+            var id = req.session.user.id;
+            app.db.User.findById(id, function (err, result) {
+                if (err) { next(); }
+                req.user = result;
+                next();
             });
-            req.user =user;
+        } else {
+            next();
         }
-        next();
     })
+
 
     function isAdmin(req, res, next) {
         if (req.user) {
@@ -50,26 +60,27 @@ module.exports = function (app) {
     function login(req, res, next) {
         var model = req.body;
 
-        var user = app.dbLayer.db.users.find(function (x) {
-            return x.email == model.email;
-        });
-        if (user && user.pass == model.pass) {
-            if( user.verf == true){
-                req.session.user = {
-                email: user.email
-            };
+        app.db.User.findOne({ "email": model.email }, function (err, user) {
+
+            if (user && app.bcrypt.compareSync(model.pass, user.pass)) {
+                if (user.verf == null) {
+                    req.session.user = {
+                        id: user._id
+                    };
+                    next();
+                } else {
+                    res.render('user/mail-views/pleaseactivate', { entityId: user._id })
+                }
+
             } else {
-                res.render('user/pleaseactivate', { entityId: user.id })
+                res.render('user/login', { msg: 'كلمه المرور او البريد الالكتروني غير صحيح' })
             }
-            
-        }else {
-            res.render('user/pleaseactivate', { entityId: user.id })
-        }
-        next();
+        });
     }
+
     function logout(req, res, next) {
         req.session.reset();
         next();
     }
-    
+
 }

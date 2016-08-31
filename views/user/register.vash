@@ -1,6 +1,7 @@
 @html.extend('layouts/main', function(model) { @html.block('body', function(model) {
 
 <form action="/user/register" method="POST">
+<input type="hidden" name="_csrf" value="@model.csrfToken">
 <div class="container-fluid signup-row">
     <div class="row">
         <div class="col-md-8">

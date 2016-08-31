@@ -1,0 +1,23 @@
+@html.extend('layouts/main', function(model) { @html.block('body', function(model) {
+<div class="row main-head">
+    <div class="col-sm-2">
+     <a href="#"><img src="/img/like.png" alt=""></a> 
+    </div>
+	<div class="col-sm-2">
+        <a href="#"><img src="/img/love.png" alt=""></a> 
+    </div>
+	<div class="col-sm-2">
+       <a href="#"> <img src="/img/newspaper.png" alt=""></a> 
+    </div>
+
+</div>
+<div class="row">
+    
+</div>
+<div class="row">
+    <div class="col-sm-3">
+       
+    </div>
+</div>
+
+})})

@@ -4,9 +4,9 @@ module.exports = {
         port: 3000
     },
        mailSender: {
-        email: 'sharekat@smartsoft-eg.com',
-        password: 'sharekat',
-        host: 'gator3086.hostgator.com',
+        email: 'mohamed.anwarlabib@gmail.com',
+        password: 'mohamed@9708989',
+        host: 'smtp.gmail.com',
         port: 465,
         from: 'no-reply@sharekatmasr.com'
     },

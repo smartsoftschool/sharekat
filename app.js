@@ -2,15 +2,22 @@ var express = require("express");
 var path = require("path");
 var vash = require("vash");
 var bodyparser = require('body-parser');
-var dbLayer = require(path.join(__dirname, 'database/db'))
-
-    
-
-
+var mongoose = require('mongoose');
+var bcrypt = require('bcrypt-nodejs');
+var shortid = require('shortid');
+var csrf = require('csurf');
 var app = express();
-dbLayer.load();
-app.dbLayer = dbLayer;
-app.config = require(path.join(__dirname, 'config/config'));
+
+mongoose.connect('mongodb://localhost/sharekat', function (err) {
+
+if (err) throw err;
+
+app.db = require(__dirname + '/models');
+app.mongoose = mongoose;
+app.bcrypt = bcrypt;
+app.shortid = shortid;
+
+app.config = require(path.join(__dirname, 'config/config-smartsoft'));
 
 app.set('view engine', "vash");
 
@@ -22,6 +29,7 @@ app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 require(path.join(__dirname, "/libs/auth"))(app);
 require(path.join(__dirname, "/libs/mailer"))(app);
+app.use(csrf());
 
 
 
@@ -34,6 +42,6 @@ app.listen(3000, function (err) {
   console.log("server start at port 3000....");
 });
 
-
+})
 
 
