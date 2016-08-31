@@ -73,9 +73,19 @@ module.exports = function (app) {
                 }
 
             } else {
+<<<<<<< HEAD
                 res.render('user/login', { msg: 'كلمه المرور او البريد الالكتروني غير صحيح' })
             }
         });
+=======
+                res.render('user/mail-views/pleaseactivate', { entityId: user.id })
+            }
+            
+        }else {
+            res.render('user/mail-views/pleaseactivate', { entityId: user.id })
+        }
+        next();
+>>>>>>> b04ffd60953d167d2e03a61ba3531afc9bb6db6c
     }
 
     function logout(req, res, next) {
