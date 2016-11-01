@@ -83,8 +83,9 @@ module.exports = function (app) {
                 if (req.user) {
                     res.redirect('/')
                 } else {
-                res.render('opr/user/login', {csrfToken: req.csrfToken(), msg: 'يرجي التاكد من البريد الالكتروني وكلمه السر'})
+                    res.render('opr/user/login', { csrfToken: req.csrfToken(), msg: 'يرجي التاكد من البريد الالكتروني وكلمه السر' })
                 }
+
             }
         });
     }
