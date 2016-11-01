@@ -1,0 +1,42 @@
+@html.extend('adm/layouts/main', function(model) { @html.block('body', function(model) {
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>قائمه الدول</h4>
+        <h4>@model.msg</h4>
+    </div>
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-xs-3 col-md-2"><a href="/admin/country/add"><button class="btn btn-warning"><span class="glyphicon">+ اضافه</span></button></a></div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-8">
+
+
+            <table class="table table-bordered table-hover table-condensed table-responsive table-edit">
+                <thead>
+                    <th>الدوله</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    @model.entities.map(function(country) { return (
+                    <tr>
+                        <td><a href="/admin/country/edit/@country._id">@country.name</a></td>
+                        <td><button class="btn btn-danger btn-table-edit" onClick="openConfirmDelete('/admin/country/delete/@country._id')"><span class="glyphicon glyphicon-trash">    مسح</span></button></td>
+                    </tr>
+                    ); })
+                </tbody>
+            </table>
+
+
+
+        </div>
+
+    </div>
+
+    
+
+</div>
+
+})})

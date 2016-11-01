@@ -1,0 +1,33 @@
+<div div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" dir="rtl">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">تاكيد الحذف</h4>
+			</div>
+			<div class="modal-body">
+				<p dir="rtl">هل انت متاكد انك تريد المتابعه والحذف؟</p>
+			</div>
+			<div class="modal-footer">
+
+
+				<form action="" method="POST" id="deleteConfirmModalForm">
+					<input type="hidden" name="_csrf" value="@model.csrfToken">
+					<button type="submit" class="btn btn-danger">حذف</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">الغاء</button>
+				</form>
+
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<script>
+        function openConfirmDelete(link){
+			var form = document.getElementById("deleteConfirmModalForm");
+			form.setAttribute('action', link);
+			$("#deleteConfirmModal").modal("show");
+    	}
+	</script>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

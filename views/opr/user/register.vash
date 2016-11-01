@@ -1,0 +1,109 @@
+@html.extend('opr/layouts/main', function(model) { @html.block('body', function(model) {
+
+<form action="/user/register" method="POST" id="contact_form">
+    <input type="hidden" name="_csrf" value="@model.csrfToken">
+    <div class="container-fluid signup-row">
+        <div class="row">
+            <div class="col-md-8">
+                <h3 class="dark-grey"> اشترك الان <img src="/img/reg.png" alt="" height="30vw" width="30vw"></h3>
+
+                <div class="form-group col-lg-12">
+                    <label>الاسم</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="الاسم" maxlength="15" required>
+
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>كلمه المرور</label>
+                    <input type="password" class="form-control" id="first" name="pass" placeholder="كلمه المرور" required>
+
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <label>تاكيد كلمه المرور</label>
+                    <input type="password" class="form-control" id="second" name="passconfirm" placeholder=" تأكيد كلمه المرور" required>
+                </div>
+
+                <div class="form-group col-lg-12">
+                    <label>البريد الالكتروني</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="البريد الالكتروني" required>
+                </div>
+
+
+                <div class="form-group col-lg-12">
+                    <div class="col-xs-12">
+                        <label class="col-xs-3 control-label"><h4>الجنس<span class="red">:</span></h4></label>
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-success">
+                                    <img src="/img/M.png" alt="" height="20vw" width="20vw">
+                                    <input type="radio" name="gender" value="M"  height="20vw" width="20vw"> ذكر
+                            </label>
+                            <label class="btn btn-warning">
+                                <img src="/img/F.png" alt="" height="20vw" width="20vw">
+                                    <input type="radio" name="gender" value="F"  height="20vw" width="20vw"/> انثي
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group col-lg-8 col-xs-8">
+                    <label for="sel1">رقم المحمول</label>
+                    <input type="tel" class="form-control" name="number" height="20vw" width="20vw">
+                    
+                </div>
+
+
+
+                <div class="form-group col-lg-8 col-xs-8">
+                    <label for="sel1">تاريخ الميلاد</label>
+                    <input type="date" class="form-control" name="birthdate" height="20vw" width="20vw" required>
+                </div>
+
+                <div class="row col-md-12 col-xs-12">
+                    <div class="form-group col-lg-3">
+                        <label for="sel1">البلد</label>
+                        <input list="countries" name="country" class="form-control" required>
+                        <datalist id="countries">
+                            <option value="egypt"></option>
+                        </datalist>
+                    </div>
+
+                    <div class="form-group col-lg-3">
+                        <label for="sel1">المحافظه</label>
+                        <input list="state" name="state" class="form-control" required>
+                        <datalist id="state">
+                            <option value="giza"></option>
+                        </datalist>
+                    </div>
+
+                    <div class="form-group col-lg-3">
+                        <label for="sel1">الحي</label>
+                        <input list="city" name="city" class="form-control" required>
+                        <datalist id="city">
+                            <option value="El haram"></option>
+                        </datalist>
+                    </div>
+
+                    <div class="form-group col-lg-3">
+                        <label for="sel1">المنطقه</label>
+                        <input list="zone" name="zone" class="form-control" required>
+                        <datalist id="zone">
+                            <option value="talbya"></option>
+                        </datalist>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-6 reg-btn">
+
+                <button type="submit" id="submit" class="btn btn-primary reg-btn"><img src="/img/save.png" alt="" height="20vw" width="20vw">  متابعه</button>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+})})

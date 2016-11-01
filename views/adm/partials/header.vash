@@ -1,0 +1,17 @@
+<nav class="">
+
+  <div class="navbar-header col-sm-2">
+   @if (model.admin){
+    <h1>@model.admin.name مرحباً </h1>
+    <button><a href="/admin/logout">تسجيل الخروج</a></button>
+    }else{
+    <h1> مرحباً </h1>
+    }
+    
+  </div>
+ 
+  <div class="col-sm-3">
+    
+  </div>
+
+</nav>

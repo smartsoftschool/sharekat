@@ -2,9 +2,7 @@ module.exports = function (app) {
     var sessions = require('client-sessions');
     var csrf = require('csurf');
 
-    // app.use(csrf())
 
-    // error handler
 
 
     app.auth = {
@@ -12,6 +10,7 @@ module.exports = function (app) {
         login: login,
         logout: logout,
         isAdmin: isAdmin,
+        alreadylogin: alreadylogin
     };
 
 
@@ -39,12 +38,12 @@ module.exports = function (app) {
 
     function isAdmin(req, res, next) {
         if (req.user) {
-            if (user.isAdmin) {
+            if (user.isAdmin == true) {
                 next();
             }
         }
         req.session.returnUrl = req.url;
-        res.redirect('/login');
+        res.redirect('/user/login');
     }
 
     function loginRequired(req, res, next) {
@@ -56,6 +55,14 @@ module.exports = function (app) {
             res.redirect('/user/login');
         };
     };
+
+    function alreadylogin(req, res, next) {
+        if (req.user) {
+            res.redirect('/');
+        } else {
+            next();
+        }
+    }
 
     function login(req, res, next) {
         var model = req.body;
@@ -73,7 +80,11 @@ module.exports = function (app) {
                 }
 
             } else {
-                res.render('user/login', { msg: 'كلمه المرور او البريد الالكتروني غير صحيح' })
+                if (req.user) {
+                    res.redirect('/')
+                } else {
+                res.render('opr/user/login', {csrfToken: req.csrfToken(), msg: 'يرجي التاكد من البريد الالكتروني وكلمه السر'})
+                }
             }
         });
     }

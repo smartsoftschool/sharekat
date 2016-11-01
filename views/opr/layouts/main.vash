@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> @if (model.user){
+	<title>@model.user.name</title>
+	}else{
+	<title>Sharekat</title>
+	}
+
+	<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/EARLY_ACCESS.css">
+	<link rel="stylesheet" href="/bootstrap-rtl/dist/css/bootstrap-rtl.min.css">
+	<link rel="stylesheet" href="/css/edit.css">
+	<link rel="stylesheet" href="/css/nav.css">
+</head>
+
+<body>
+
+	<div>
+		<div class="col-md-12">
+			<div class="row">
+				<!--Navbar-->
+				@html.include('opr/partials/header')
+			</div>
+
+			<div class="row body-back">
+
+				<!------------Side ADS----------------->
+				<div class="col-sm-2 no-sm">
+					<img src="/img/ads.jpg" alt="" class="opacity-animate">
+				</div>
+				<!--------------BODY------------------->
+
+				<div class="col-xs-12 col-sm-8">
+					@html.block('body')
+				</div>
+				<!------------Side ADS----------------->
+				<div class="col-sm-2 no-sm">
+					<img src="/img/ads1.jpg" alt="" class="opacity-animate">
+				</div>
+
+			</div>
+
+			<div class="row footer-col">
+				@html.include('opr/partials/footer')
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<!--Side ADS-->
+
+
+
+
+	<!--Main page-->
+	<!--<div class="container main">
+    
+  </div>-->
+
+
+
+	<!--java script-->
+	<script src="/jquery/dist/jquery.min.js"></script>
+	<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="/js/edit.js"></script>
+</body>
+
+</html>

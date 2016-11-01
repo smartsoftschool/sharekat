@@ -1,0 +1,39 @@
+@html.extend('adm/layouts/loginmain', function(model) { @html.block('body', function(model) {
+
+<div class="form">
+
+    <ul class="tab-group">
+        <li class="tab active"><a href="#login">تسجيل الدخول</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+        <div id="login">
+            <h1>!مرحبا بك</h1>
+
+            <form action="/adminlogin" method="post">
+                <input type="hidden" name="_csrf" value="@model.csrfToken">
+                <div class="field-wrap">
+                    <label>الاسم <span class="req">*</span></label>
+                    <input type="text" name="name" required autocomplete="on">
+                </div>
+
+                <div class="field-wrap">
+                    <label>كلمه المرور<span class="req">*</span> </label>
+                    <input type="password" name="pass" required autocomplete="off">
+                </div>
+
+                <p class="forgot"><a href="#">Forgot Password?</a></p>
+
+                <button class="button button-block">تسجيل الدخول</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+})})

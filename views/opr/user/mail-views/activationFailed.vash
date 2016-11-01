@@ -1,0 +1,10 @@
+
+@html.extend('opr/layouts/main', function(model) { 
+@html.block('body', function(model) {
+
+        <div class="jumbotron">
+            <h3>للأسف, لقد فشل تفعيل حسابك برجاء اعادة الاشتراك من <a href="/user/register">هنا</a></h3>
+        </div>
+
+})})
+ 

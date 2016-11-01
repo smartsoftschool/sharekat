@@ -5,7 +5,7 @@ module.exports = {
     },
        mailSender: {
         email: 'mohamed.anwarlabib@gmail.com',
-        password: 'mohamed@9708989',
+        password: '',
         host: 'smtp.gmail.com',
         port: 465,
         from: 'no-reply@sharekatmasr.com'

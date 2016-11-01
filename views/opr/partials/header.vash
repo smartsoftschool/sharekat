@@ -1,0 +1,93 @@
+<div class="navbar navbar-default head-img container-fluid no-sm">
+
+
+	<div class="row">
+
+		<div class="col-xs-6">
+			<nav>
+				<ul class="nav nav-pills pull-right">
+					@if(model.user){
+					<li class="nav-btn top-btn"><a href="/user/logout"> تسجيل الخروج</a></li>
+					<li class="nav-btn top-btn"><a href="/user-profile"> @model.user.name</a></li>
+					} else {
+					<li class="nav-btn top-btn"><a href="/user/login"> تسجيل الدخول</a></li>
+					<li class="nav-btn top-btn"><a href="/user/register">اشترك الان</a></li>
+					}
+
+				</ul>
+			</nav>
+		</div>
+
+		<div class="col-xs-6">
+			<nav>
+				<ul class="nav  nav-pills pull-left">
+					<li class="nav-btn top-btn"><a href="/">الرئيسية</a></li>
+					<li class="nav-btn top-btn "><a href="#">معلومات</a></li>
+					<li class="nav-btn top-btn "><a href="#">اتصل بنا</a></li>
+				</ul>
+			</nav>
+		</div>
+
+
+	</div>
+	<div class="row">
+		<nav>
+			<img src="/img/untitled.png" class="logo brand" width="400px" height="200px">
+		</nav>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-2"></div>
+
+		<div class="col-sm-4">
+			<nav>
+				<ul class="nav nav-pills pull-right">
+
+					<li class="bottom-btn animate"><a href="/user/add-adv"> اعلن عن منتجك مجانا </a></li>
+
+				</ul>
+			</nav>
+		</div>
+		<div class="col-sm-2">
+		</div>
+	</div>
+
+</div>
+
+<div class="container-fluid sm-only sm-nav-background">
+	<div class="row">
+		<div class="col-xs-10">
+			<img src="/img/logo.png" alt="">
+		</div>
+
+		<div class="col-xs-2">
+			<button type="button" class="navbar-toggle collapsed sm-btn-move" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+				aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+		</div>
+
+
+	</div>
+
+</div>
+
+<div class=" sm-only">
+	<div class="col-xs-12  collapse navbar-collapse nav-li-col" id="bs-example-navbar-collapse-1">
+		<ul class="nav">
+			<li class="btn btn-mob"><a href="/">الرئيسية</a></li>
+			<li class="btn btn-mob"><a href="#">معلومات</a></li>
+			<li class="btn btn-mob"><a href="#">اتصل بنا</a></li>
+			@if(model.user){
+			<li class="btn btn-mob"><a href="/user/logout"> تسجيل الخروج</a></li>
+			<li class="btn-mob"><a href="/user-profile"> @model.user.name</a></li>
+			} else {
+			<li class="btn btn-mob"><a href="/user/login"> تسجيل الدخول</a></li>
+			<li class="btn btn-mob"><a href="/user/register">اشترك الان</a></li>
+			}
+		</ul>
+	</div>
+</div>

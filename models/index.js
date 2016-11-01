@@ -1,4 +1,7 @@
 module.exports = {
-	User: require('./user')
-	// Customer: require('./customer')
+	User: require('./opr/user'),
+	Admin: require('./adm/admin'),
+	Country: require('./adm/adress/country'),
+	State: require('./adm/adress/state'),
+	City: require('./adm/adress/city'),
 }

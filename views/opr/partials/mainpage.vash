@@ -1,0 +1,81 @@
+<div class="row main-head">
+
+	<div class="col-xs-4 col-lg-2  main-search-icons">
+		<!--<div class="wrapper">
+			<div class="BOX BOX1">
+				<div class="front">
+					<img src="/img/buy.png" />
+				</div>
+			</div>
+		</div>-->
+		<div class="BOX">
+		<div class="hover-tile-container">
+			<div class="hover-tile hover-tile-visible"></div>
+			<div class="hover-tile hover-tile-hidden">
+				<h4>Hidden Copy</h4>
+				<p>Lorem ipsum dolor provident eligendi fugiat ad exercitationem sit amet, consectetur adipisicing elit. Unde, provident
+					eligendi.</p>
+			</div>
+		</div>
+	</div>
+	</div>
+	
+	<div class="col-xs-4 col-lg-2 main-search-icons ">
+		<div class="wrapper">
+			<div class="BOX BOX2">
+				<div class="front">
+					<img src="/img/shirt4.png" />
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-4 col-lg-2 main-search-icons ">
+		<div class="wrapper">
+			<div class="BOX BOX3">
+				<div class="front">
+					<img src="/img/property0.png" />
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-4 col-lg-2 main-search-icons ">
+		<div class="wrapper">
+			<div class="BOX BOX4">
+				<div class="front">
+					<img src="/img/lcd.png" />
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-4 col-lg-2 main-search-icons ">
+		<div class="wrapper">
+			<div class="BOX BOX5">
+				<div class="front">
+					<img src="/img/car.png" />
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="col-xs-4 col-lg-2 main-search-icons ">
+		<div class="wrapper">
+			<div class="BOX BOX6">
+				<div class="front">
+					<img src="/img/tool.png" />
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+<div class="row">
+
+</div>

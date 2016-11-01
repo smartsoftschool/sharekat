@@ -1,9 +1,0 @@
-@html.extend('layouts/mailLayout', function(model) { 
-@html.block('body', function(model) {
-
-<h1>Mail Activation</h1>
-
-<a href="@model.link">@model.link</a>
-
-
-})})

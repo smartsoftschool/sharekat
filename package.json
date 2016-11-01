@@ -16,6 +16,7 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
+    "bootstrap-datepicker": "^1.6.4",
     "bootstrap-rtl": "^3.3.4",
     "client-sessions": "^0.7.0",
     "csurf": "^1.9.0",

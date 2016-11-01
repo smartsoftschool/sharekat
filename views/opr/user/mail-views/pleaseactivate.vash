@@ -1,0 +1,15 @@
+@html.extend('opr/layouts/main', function(model) { @html.block('body', function(model) {
+
+  <div class=" jumbotron">
+      <div class="row">
+          <div class="col-xs-9"> 
+              <h3>
+                  هذا الحساب لم يتم تفعيله بعد , برجاء الرجوع لبريدك الالكتروني و الضغط علي رابط التفعيل
+              </h3>
+              <p>لاعادة استقبال رابط التفعيل مرة اخري اضغط <a href="/user/re-verify/@model.entityId">هنا</a></p>
+          </div>
+      </div>
+  </div>
+
+})})
+

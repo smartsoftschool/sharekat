@@ -1,0 +1,3 @@
+@html.extend('adm/layouts/main', function(model) { @html.block('body', function(model) {
+@html.include('adm/partials/mainpage')
+})})

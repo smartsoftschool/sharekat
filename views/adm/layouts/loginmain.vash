@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login Admin</title>
+    <link rel="stylesheet" href="/admin/login/private/css/main.css">
+</head>
+<body>
+     @html.block('body')
+  <script src="/jquery/dist/jquery.min.js"></script>
+  <script src="/admin/login/private/js/main.js"></script>
+</body>
+</html>

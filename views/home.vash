@@ -1,8 +1,0 @@
-@html.extend('layouts/main', function(model) {
-@html.block('body', function(model) {
-
-@html.include('partials/mainpage')
-
-})
-})
-
